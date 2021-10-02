@@ -10,6 +10,7 @@
         <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/fontsx.css" />
         <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/gradients.css" />
         <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/layout.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/B-Software/Ward@master/src/main/resources/static/css/dimensions.css" />
         <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/shadows.css" />
         <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/themes.css" />
         <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/chart.min.js"></script>
@@ -20,7 +21,7 @@
         <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/globals.js"></script>
         <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/index.js"></script>
         <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/labels.js"></script>
-        <script type = "text/javascript" th:inline = "javascript"> globalsInitialization(); </script>
+        <script type = "text/javascript" th:inline = "javascript">globalsInitialization(); </script>
     </head>
     <body id = "background">
         <script type = "text/javascript" th:inline = "javascript"> backgroundInitialization(); </script>
@@ -199,6 +200,14 @@
                                 <div class = "contacts-description">
                                     <div class = "first">本页面使用Ward</div>
                                     <div class = "second">您可以在github上搜索并构建</div>
+                                </div>
+                                <div class = "contacts-links">
+                                    <a href = "https://github.com/B-Software/Ward">
+                                        <img class = "first" th:src = @{/img/links/github.png} />
+                                    </a>
+                                    <a href = "https://t.me/Rudolf_Barbu">
+                                        <img class = "second" th:src = @{/img/links/telegram.png} />
+                                    </a>
                                 </div>
                             </div>
                         </div>
