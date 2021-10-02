@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org" id = "html" th:attr = "theme = ${theme}">
+    <head>
+        <meta charset = "UTF-8">
+        <title th:text = "${info.setup.serverName}"></title>
+        <link rel = "shortcut icon" type = "image/x-icon"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/img/Qme9XoLayULdZ19K8CAgk6tTCywdQrtTAWh6r9Z4pqP3oP.ico" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/bootstrap.min.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/animations.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/colors.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/fontsx.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/gradients.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/layout.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/shadows.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/themes.css" />
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/chart.min.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/three.min.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/background.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/background.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/chart.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/globals.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/index.js"></script>
+        <script type = "text/javascript"  src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/labels.js"></script>
+        <script type = "text/javascript" th:inline = "javascript"> globalsInitialization(); </script>
+    </head>
+    <body id = "background">
+        <script type = "text/javascript" th:inline = "javascript"> backgroundInitialization(); </script>
+        <div class = "container index">
+            <div class = "row">
+                <div class = "col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class = "card">
+                        <div class = "header">
+                            <div class = "hw-logo first"></div>
+                            <div class = "label-hw-info">
+                                <div class = "hw-type">处理器</div>
+                                <div class = "hw-name" th:text = "${info.processor.name}"></div>
+                            </div>
+                        </div>
+                        <div class = "usage">
+                            <div class = "card-body-squares-grid first">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class = "main-hw-info">
+                                <div class = "hw-usage">
+                                    <div class = "usage-value">
+                                        <span id = "processor-hundreds" class = "first">0</span>
+                                        <span id = "processor-tens" class = "second">0</span>
+                                        <span id = "processor-ones" class = "third">0</span>
+                                    </div>
+                                    <div class = "usage-postfix">%</div>
+                                </div>
+                                <p class = "info-label">处理器使用</p>
+                                <div class = "usage-underline first"></div>
+                            </div>
+                        </div>
+                        <div class = "footer first">
+                            <div class = "card-footer-dots-grid">
+                                <div class = "first">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "second">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "third">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                            </div>
+                            <div class = "detailed-hw-info">
+                                <div class = "first" th:text = "${info.processor.coreCount}"></div>
+                                <div id = "currentClockSpeed" class = "second" th:text = "${info.processor.clockSpeed}"></div>
+                                <div class = "third" th:text = "${info.processor.bitDepth}"></div>
+                            </div>
+                            <div class = "dividers">
+                                <div class = "first"></div>
+                                <div class = "second"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class = "card">
+                        <div class = "header">
+                            <div class = "hw-logo second"></div>
+                            <div class = "label-hw-info">
+                                <div class = "hw-type">设备</div>
+                                <div class = "hw-name" th:text = "${info.machine.operatingSystem}"></div>
+                            </div>
+                        </div>
+                        <div class = "usage">
+                            <div class = "card-body-squares-grid second">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class = "main-hw-info">
+                                <div class = "hw-usage">
+                                    <div class = "usage-value">
+                                        <span id = "ram-hundreds" class = "first">0</span>
+                                        <span id = "ram-tens" class = "second">0</span>
+                                        <span id = "ram-ones" class = "third">0</span>
+                                    </div>
+                                    <div class = "usage-postfix">%</div>
+                                </div>
+                                <p class = "info-label">内存使用</p>
+                                <div class = "usage-underline second"></div>
+                            </div>
+                        </div>
+                        <div class = "footer second">
+                            <div class = "card-footer-dots-grid">
+                                <div class = "first">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "second">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "third">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                            </div>
+                            <div class = "detailed-hw-info">
+                                <div class = "first" th:text = "${info.machine.totalRam}"></div>
+                                <div class = "second" th:text = "${info.machine.ramTypeOrOSBitDepth}"></div>
+                                <div id = "currentProcCount" class = "third" th:text = "${info.machine.procCount}"></div>
+                            </div>
+                            <div class = "dividers">
+                                <div class = "first"></div>
+                                <div class = "second"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class = "card">
+                        <div class = "header">
+                            <div class = "hw-logo third"></div>
+                            <div class = "label-hw-info">
+                                <div class = "hw-type">存储空间</div>
+                                <div class = "hw-name" th:text = "${info.storage.mainStorage}"></div>
+                            </div>
+                        </div>
+                        <div class = "usage">
+                            <div class = "card-body-squares-grid third">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class = "main-hw-info">
+                                <div class = "hw-usage">
+                                    <div class = "usage-value">
+                                        <span id = "storage-hundreds" class = "first">0</span>
+                                        <span id = "storage-tens" class = "second">0</span>
+                                        <span id = "storage-ones" class = "third">0</span>
+                                    </div>
+                                    <div class = "usage-postfix">%</div>
+                                </div>
+                                <div class = "info-label">存储空间占用</div>
+                                <div class = "usage-underline third"></div>
+                            </div>
+                        </div>
+                        <div class = "footer third">
+                            <div class = "card-footer-dots-grid">
+                                <div class = "first">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "second">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                                <div class = "third">
+                                    <div class = "inner-dot"></div>
+                                </div>
+                            </div>
+                            <div class = "detailed-hw-info">
+                                <div id = "currentTotalStorage" class = "first" th:text = "${info.storage.total}"></div>
+                                <div id = "currentDiskCount" class = "second" th:text = "${info.storage.diskCount}"></div>
+                                <div class = "third" th:text = "${info.storage.swapAmount}"></div>
+                            </div>
+                            <div class = "dividers">
+                                <div class = "first"></div>
+                                <div class = "second"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type = "text/javascript" th:inline = "javascript"> labelsInitialization(); </script>
+                <div class = "col-sm-12 col-md-6 col-lg-6 col-xl-4 sm-hidden">
+                    <div class = "card">
+                        <div class = "controls">
+                            <img id = "first-control" class = "first" src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/left.png" />
+                            <img id = "second-control" class = "second" src ="https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/right.png" />
+                        </div>
+                        <div class = "pages">
+                            <div id = "logo-page" class = "first">
+                                <div class = "logo">WARD</div>
+                                <div class = "logo-description">服务器面板</div>
+                            </div>
+                            <div id = "contacts-page" class = "second">
+                                <div class = "contacts-label">关于</div>
+                                <div class = "contacts-description">
+                                    <div class = "first">本页面使用Ward</div>
+                                    <div class = "second">您可以在github上搜索并构建</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "clouds">
+                            <img id = "cloud-left" class = "first"src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/cloudleft.png" />
+                            <img id = "cloud-right" class = "second" src = "https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/cloudright.png" />
+                        </div>
+                        <img class = "background" src ="https://cdn.jsdelivr.net/gh/thun888/tuku@master/ward/background.png" />
+                        <div class = "uptime">
+                            <div class = "uptime-squares-grid">
+                                <div class = "first"></div>
+                                <div class = "second"></div>
+                                <div class = "third"></div>
+                            </div>
+                            <div class = "uptime-rectangle-grid">
+                                <div class = "values-grid">
+                                    <div><p id = "uptime-days" th:text = "${info.uptime.days}"></p></div>
+                                    <div><p id = "uptime-hours" th:text = "${info.uptime.hours}"></p></div>
+                                    <div><p id = "uptime-minutes" th:text = "${info.uptime.minutes}"></p></div>
+                                    <div><p id = "uptime-seconds" th:text = "${info.uptime.seconds}"></p></div>
+                                </div>
+                                <div class = "labels-grid">
+                                    <div>天</div>
+                                    <div>时</div>
+                                    <div>分</div>
+                                    <div>秒</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-lg-12 col-xl-8 sm-hidden">
+                    <div class = "card">
+                        <div class = "chart-label">图表/%</div>
+                        <div class = "chart-triangle-grid">
+                            <div id = "processor-triangle" class = "first"></div>
+                            <div id = "ram-triangle" class = "second"></div>
+                            <div id = "storage-triangle" class = "third"></div>
+                        </div>
+                        <div class = "chart-rectangle-grid">
+                            <div id = "processor-rectangle" class = "first"></div>
+                            <div id = "ram-rectangle" class = "second"></div>
+                            <div id = "storage-rectangle" class = "third"></div>
+                        </div>
+                        <div class = "chart-container">
+                            <canvas id = "chart-body"></canvas>
+                        </div>
+                        <script type = "text/javascript" th:inline = "javascript"> chartInitialization(); </script>
+                    </div>
+                    <div id = "project-version" class = "text-center" th:text = "${info.project.version}"></div>
+                </div>
+            </div>
+        </div>
+        <script type = "text/javascript" th:inline = "javascript"> indexInitialization(); </script>
+    </body>
+</html>
