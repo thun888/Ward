@@ -1,4 +1,5 @@
-Ward“汉化版”，基于1.88版本修改，同时把引用的css,js等放到jsd上减少源站的压力（cdn给不起qwq）
+>Ward“汉化版”，基于1.88版本修改，同时把引用的css,js等放到jsd上减少源站的压力（cdn给不起qwq）
+>由gia自动编译，切到build分支[下载jar文件](https://raw.thun888.xyz/thun888/Ward/build/ward-1.8.8-thun888.jar)即可，有需要可以fork仓库进行修改（添加token变量）
 
 
 <h3 align = "center">
